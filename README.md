@@ -55,6 +55,8 @@ Other global options that I have added are as follow, with a brief description f
 * ```blockpar``` - use block paragraphs via ```parskip```
 * ```footnotes``` - aesthetic adjustments to footnotes, including hanging text if ```blockpar``` is invoked
 * ```footnotesroman``` - the same as ```footnotes``` but using roman numbers, so as not to confuse footnotes with bibliography entries.
+* ```chem``` - chemistry macros
+* ```misc``` - extra useful packages
 
 ## Details for Global Options: Fonts
 
@@ -276,14 +278,74 @@ This option works the same way as ```footnotes```, but uses lowercase Roman nume
 
 Example: ```\documentclass[10pt,palatino,narrow,ars,footnotes,tables,captions]{jpt}```	
 
-
 The ```ars``` option reproduces the Ars Classica document theme (see the ```ArsClassica``` package by Lorenzo Pantieri) by redefining section, abstract, and title headings. In doing so, two new commands are provided: ```\spacedlowsmallcaps{}``` and ```\spacedallcaps{}```. This option uses the sans serif font Iwona, which looks very nice in spaced all-caps. Letterspacing is achieved with the ```soul``` package.
 
 This option can be used in conjunction with any other global options; however the original Ars Classica document "look" can be best achieved by combining the options ```[10pt,palatino,narrow,ars,footnotes,tables,captions]```.
 
+### Chem
 
+Example: ```\documentclass[10pt,cm,chem]{jpt}```
 
+This option loads a variety of chemistry shortcuts and macros.
 
+* ```\newcommand{\degc}{$^{\circ}$C}```
+* ```\newcommand{\myu}[1]{\text{\space#1}}```
+* ```\newcommand{\tild}{$\sim$}```
+* ```\newcommand{\delg}{$\Delta G$}```
+* ```\newcommand{\dgnot}{$\Delta G^{\circ}$}```
+* ```\newcommand{\dgfnot}{$\Delta G_{\text{f}}^{\circ}$}```
+* ```\newcommand{\dgrxn}{$\Delta G_{\text{rxn}}$}```
+* ```\newcommand{\dgnotrxn}{$\Delta G_{\text{rxn}}^{\circ}$}```
+* ```\newcommand{\delh}{$\Delta H$}```
+* ```\newcommand{\dhrxn}{$\Delta H_{\text{rxn}}$}```
+* ```\newcommand{\dhnotrxn}{$\Delta H_{\text{rxn}}^{\circ}$}```
+* ```\newcommand{\dhnot}{$\Delta H^{\circ}$}```
+* ```\newcommand{\dhf}{$\Delta H_{\text{f}}$}```
+* ```\newcommand{\dhfnot}{$\Delta H_{\text{f}}^{\circ}$}```
+* ```\newcommand{\dhfus}{$\Delta H_{\text{fus}}$}```
+* ```\newcommand{\dhvap}{$\Delta H_{\text{vap}}$}```
+* ```\newcommand{\dsnotrxn}{$\Delta S_{\text{rxn}}^{\circ}$}```
+* ```\newcommand{\dsnot}{$\Delta S^{\circ}$}```
+* ```\newcommand{\dels}{$\Delta S$}```
+* ```\newcommand{\essnot}{$S^{\circ}$}```
+* ```\newcommand{\electron}{e$^-$}```
+* ```\newcommand{\Ecell}{$\emf_{\text{cell}}$}``` 
+* ```\newcommand{\Enotcell}{$\emf^{\circ}_{\text{cell}}$}```
+* ```\newcommand{\Enot}{$\emf^{\circ}$}```
+* ```\newcommand{\Ka}{$K_{\text{a}}$}```
+* ```\newcommand{\Kb}{$K_{\text{b}}$}```
+* ```\newcommand{\Ksp}{$K_{\text{sp}}$}```
+* ```\newcommand{\Keq}{$K_{\text{eq}}$}```
+* ```\newcommand{\Kp}{$K_P$}```
+* ```\newcommand{\Kc}{$K_{\text{c}}$}```
+* ```\newcommand{\pKa}{p$K_{\text{a}}$}```
+* ```\newcommand{\pKb}{p$K_{\text{b}}$}```
+* ```\newcommand{\dipole}{+\hspace*{-3mm}$\longrightarrow$}```
+* ```\newcommand{\cmi}{cm$^{-1}$}```
+* ```\newcommand{\cd}{$\cdot$}```
+* ```\newcommand{\ub}[2]{$\underbrace{\text{#1}}_{\text{#2}}$} % usage: \ub{top}{bottom}```
+* ```\newcommand{\us}[2]{$\underset{\text{#2}}{\text{#1}}$}    % usage: \us{top}{bottom}```
+* ```\newcommand{\ffbox}[1]{\fbox{\fbox{\parbox{.95\textwidth}{\centering #1}}}}```
+
+### Misc
+
+Example: ```\documentclass[10pt,cm,misc]{jpt}```
+
+This option loads a variety of other packages that might be useful in your document.
+
+* ```\RequirePackage{graphicx}```
+* ```\RequirePackage{float}```
+* ```\RequirePackage{xcolor}```
+* ```\RequirePackage{siunitx}```
+* ```\RequirePackage[all]{nowidow}```
+* ```\RequirePackage{nicefrac}```
+* ```\def\half{\nicefrac{1}{2}}```
+* ```\def\quarter{\nicefrac{1}{4}}```
+* ```\def\threequarter{\nicefrac{3}{4}}```
+* ```\def\third{\nicefrac{1}{3}}```
+* ```\def\twothird{\nicefrac{2}{3}}```
+* ```\def\eighth{\nicefrac{1}{8}}```
+* ```\def\threeeighth{\nicefrac{3}{8}}```
 
 
 

@@ -40,36 +40,40 @@
 % jpt global options/modules
 
 % -- fonts --
-\newif\ifcm\DeclareOption{cm}{\cmtrue} 
-\newif\iflm\DeclareOption{lm}{\lmtrue} 
-\newif\ifmlm\DeclareOption{mlm}{\mlmtrue} 
-\newif\iftmx\DeclareOption{tmx}{\tmxtrue} 
-\newif\ifpalatino\DeclareOption{palatino}{\palatinotrue}
-\newif\ifminion\DeclareOption{minion}{\miniontrue}
-\newif\ifmtp\DeclareOption{mtpsymb}{\mtptrue}
-\newif\ifcharter\DeclareOption{charter}{\chartertrue}
-\newif\ifnc\DeclareOption{nc}{\nctrue}
-\newif\ifebg\DeclareOption{ebg}{\ebgtrue}
-\newif\ifbvx\DeclareOption{bvx}{\bvxtrue}
+\newif\if@cm\DeclareOption{cm}{\@cmtrue} 
+\newif\if@lm\DeclareOption{lm}{\@lmtrue} 
+\newif\if@mlm\DeclareOption{mlm}{\@mlmtrue} 
+\newif\if@tmx\DeclareOption{tmx}{\@tmxtrue} 
+\newif\if@palatino\DeclareOption{palatino}{\@palatinotrue}
+\newif\if@minion\DeclareOption{minion}{\@miniontrue}
+\newif\if@mtpsymb\DeclareOption{mtpsymb}{\@mtpsymbtrue}
+\newif\if@charter\DeclareOption{charter}{\@chartertrue}
+\newif\if@nc\DeclareOption{nc}{\@nctrue}
+\newif\if@ebg\DeclareOption{ebg}{\@ebgtrue}
+\newif\if@bvx\DeclareOption{bvx}{\@bvxtrue}
 
 % -- tables and captions
-\newif\iftables\DeclareOption{tables}{\tablestrue}
-\newif\ifcaptions\DeclareOption{captions}{\captionstrue}
+\newif\if@tables\DeclareOption{tables}{\@tablestrue}
+\newif\if@captions\DeclareOption{captions}{\@captionstrue}
 
 % -- geometries
-\newif\iffullpage\DeclareOption{fullpage}{\fullpagetrue}
-\newif\ifnarrow\DeclareOption{narrow}{\narrowtrue}
+\newif\if@fullpage\DeclareOption{fullpage}{\@fullpagetrue}
+\newif\if@narrow\DeclareOption{narrow}{\@narrowtrue}
+\newif\if@tight\DeclareOption{tight}{\@tighttrue}
 
 % -- ars theme
-\newif\ifars\DeclareOption{ars}{\arstrue}
+\newif\if@ars\DeclareOption{ars}{\@arstrue}
 
 % -- block paragraphs
-\newif\ifblockpar\DeclareOption{blockpar}{\blockpartrue}
+\newif\if@blockpar\DeclareOption{blockpar}{\@blockpartrue}
 
 % -- footnotes, arabic or roman
-\newif\iffootnotes\DeclareOption{footnotes}{\footnotestrue\footnotesromanfalse}
-\newif\iffootnotesroman\DeclareOption{footnotesroman}{\footnotesromantrue\footnotesfalse}
+\newif\if@footnotes\DeclareOption{footnotes}{\@footnotestrue\@footnotesromanfalse}
+\newif\if@footnotesroman\DeclareOption{footnotesroman}{\@footnotesromantrue\@footnotesfalse}
 
+% -- other packages
+\newif\if@misc\DeclareOption{misc}{\@misctrue}
+\newif\if@chem\DeclareOption{chem}{\@chemtrue}
 
 % ==========================================================================================
 % ==========================================================================================
@@ -653,6 +657,7 @@
 \RequirePackage{enumitem}\setlist{noitemsep}
 \RequirePackage[version=4]{mhchem}
 \frenchspacing
+\newcommand{\snd}[1]{\setcounter{secnumdepth}{#1}}
 
 % ==========================================================================================
 % ==========================================================================================
@@ -660,14 +665,14 @@
 
 % modules
 
-\ifcm
+\if@cm
   \RequirePackage{setspace}\setstretch{1.1}
   \RequirePackage{textgreek}
   \RequirePackage[calligra]{emf}
 \else
 \fi
 
-\iflm
+\if@lm
   \RequirePackage[T1]{fontenc}
   \RequirePackage{lmodern}
   \RequirePackage{setspace}\setstretch{1.1}
@@ -676,7 +681,7 @@
 \else
 \fi
 
-\ifmlm
+\if@mlm
   \RequirePackage[T1]{fontenc} 
   \RequirePackage{mlmodern}   
   \RequirePackage{setspace}\setstretch{1.1}
@@ -708,7 +713,7 @@
 \else
 \fi
 
-\iftmx
+\if@tmx
   \RequirePackage[T1]{fontenc}
   \RequirePackage[defaultsups,trueslanted]{newtxtext}   
   \RequirePackage[smallerops]{newtxmath} 
@@ -718,7 +723,7 @@
 \else %
 \fi
 
-\ifpalatino
+\if@palatino
   \RequirePackage[T1]{fontenc}
   \RequirePackage[defaultsups]{newpxtext}
   \RequirePackage[smallerops]{newpxmath}
@@ -729,7 +734,7 @@
 \else
 \fi
 
-\ifminion
+\if@minion
   \RequirePackage[minionint,lf]{MinionPro}
   \RequirePackage{biolinum}
   \RequirePackage{setspace}\setstretch{1.1}
@@ -738,7 +743,7 @@
 \else 
 \fi
 
-\ifcharter
+\if@charter
   \RequirePackage[T1]{fontenc}
   \RequirePackage{XCharter}
   \RequirePackage[xcharter]{newtxmath}
@@ -748,7 +753,7 @@
 \else
 \fi
 
-\ifnc
+\if@nc
   \RequirePackage[T1]{fontenc}
   \RequirePackage{fouriernc}
   \RequirePackage{setspace}\setstretch{1.05}
@@ -757,7 +762,7 @@
 \else
 \fi
 
-\ifebg
+\if@ebg
   \RequirePackage[T1]{fontenc} 
   \RequirePackage[lf]{ebgaramond}
   \RequirePackage[ebgaramond]{newtxmath} 
@@ -766,7 +771,7 @@
 \else
 \fi
 
-\ifbvx
+\if@bvx
   \RequirePackage[T1]{fontenc} 
   \RequirePackage{Baskervaldx}
   \RequirePackage[baskervaldx]{newtxmath} 
@@ -775,7 +780,7 @@
   \else
 \fi
 
-\ifmtp
+\if@mtpsymb
   \DeclareFontFamily{U}{mtt}{}
     \DeclareFontShape{U}{mtt}{m}{up}{<->mt2exa}{}
   \DeclareSymbolFont{splgreek}{U}{mtt}{m}{up}
@@ -786,7 +791,7 @@
 \else
 \fi
 
-\ifars
+\if@ars
   \renewcommand{\sfdefault}{iwona}
   \RequirePackage{soul}
   \RequirePackage{textcase}
@@ -816,18 +821,23 @@
 \else
 \fi
 
-\iffullpage
+\if@fullpage
   \RequirePackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}  
 \else
 \fi
 
-\ifnarrow
+\if@narrow
   \RequirePackage[top=1in, bottom=1in, left=1.8in, right=1.8in]{geometry}  
 \else
 \fi
 
-\iffootnotes
-  \ifblockpar
+\if@tight
+  \RequirePackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in, includefoot]{geometry}  
+\else
+\fi
+
+\if@footnotes
+  \if@blockpar
     \RequirePackage[bottom,hang]{footmisc}
     \setlength\footnotemargin{0.75em}
   \else
@@ -838,8 +848,8 @@
 \else
 \fi
 
-\iffootnotesroman
-  \ifblockpar
+\if@footnotesroman
+  \if@blockpar
     \RequirePackage[bottom,hang]{footmisc}
     \setlength\footnotemargin{0.75em}
   \else
@@ -851,29 +861,29 @@
 \else
 \fi
 
-\ifblockpar
+\if@blockpar
   \RequirePackage{parskip}
 \else
 \fi
 
-\iftables
+\if@tables
   \RequirePackage{booktabs}
   \setlength\heavyrulewidth{0.20ex}
   \setlength\cmidrulewidth{0.15ex}
   \setlength\lightrulewidth{0.1ex}
-  \ifcm
+  \if@cm
     \setlength\heavyrulewidth{0.15ex}
     \setlength\cmidrulewidth{0.125ex}
     \setlength\lightrulewidth{0.1ex}
   \else
   \fi
-  \iflm
+  \if@lm
     \setlength\heavyrulewidth{0.15ex}
     \setlength\cmidrulewidth{0.125ex}
     \setlength\lightrulewidth{0.1ex}
   \else 
   \fi 
-  \ifebg
+  \if@ebg
     \setlength\heavyrulewidth{0.17ex}
     \setlength\cmidrulewidth{0.135ex}
     \setlength\lightrulewidth{0.1ex}
@@ -882,12 +892,72 @@
 \else
 \fi
 
-\ifcaptions
+\if@captions
   \RequirePackage[font=normalsize,labelfont={bf}]{caption}
   \captionsetup[table]{aboveskip=0.25em}
-  \captionsetup[figure]{skip=0em}
+  \captionsetup[figure]{skip=0.75em}
 \else
 \fi
+
+\if@misc
+  \RequirePackage{graphicx}
+  \RequirePackage{float}
+  \RequirePackage{xcolor}
+  \RequirePackage{siunitx}
+  \RequirePackage[all]{nowidow}
+  \RequirePackage{nicefrac}
+    \def\half{\nicefrac{1}{2}}
+    \def\quarter{\nicefrac{1}{4}}
+    \def\threequarter{\nicefrac{3}{4}}
+    \def\third{\nicefrac{1}{3}}
+    \def\twothird{\nicefrac{2}{3}}
+    \def\eighth{\nicefrac{1}{8}}
+    \def\threeeighth{\nicefrac{3}{8}}
+\else
+\fi
+
+\if@chem
+  \newcommand{\degc}{$^{\circ}$C}
+  \newcommand{\myu}[1]{\text{\space#1}}
+  \newcommand{\tild}{$\sim$}
+  \newcommand{\delg}{$\Delta G$}
+  \newcommand{\dgnot}{$\Delta G^{\circ}$}
+  \newcommand{\dgfnot}{$\Delta G_{\text{f}}^{\circ}$}
+  \newcommand{\dgrxn}{$\Delta G_{\text{rxn}}$}
+  \newcommand{\dgnotrxn}{$\Delta G_{\text{rxn}}^{\circ}$}
+  \newcommand{\delh}{$\Delta H$}
+  \newcommand{\dhrxn}{$\Delta H_{\text{rxn}}$}
+  \newcommand{\dhnotrxn}{$\Delta H_{\text{rxn}}^{\circ}$}
+  \newcommand{\dhnot}{$\Delta H^{\circ}$}
+  \newcommand{\dhf}{$\Delta H_{\text{f}}$}
+  \newcommand{\dhfnot}{$\Delta H_{\text{f}}^{\circ}$}
+  \newcommand{\dhfus}{$\Delta H_{\text{fus}}$}
+  \newcommand{\dhvap}{$\Delta H_{\text{vap}}$}
+  \newcommand{\dsnotrxn}{$\Delta S_{\text{rxn}}^{\circ}$}
+  \newcommand{\dsnot}{$\Delta S^{\circ}$}
+  \newcommand{\dels}{$\Delta S$}
+  \newcommand{\essnot}{$S^{\circ}$}
+  \newcommand{\electron}{e$^-$}
+  \newcommand{\Ecell}{$\emf_{\text{cell}}$} 
+  \newcommand{\Enotcell}{$\emf^{\circ}_{\text{cell}}$}
+  \newcommand{\Enot}{$\emf^{\circ}$}
+  \newcommand{\Ka}{$K_{\text{a}}$}
+  \newcommand{\Kb}{$K_{\text{b}}$}
+  \newcommand{\Ksp}{$K_{\text{sp}}$}
+  \newcommand{\Keq}{$K_{\text{eq}}$}
+  \newcommand{\Kp}{$K_P$}
+  \newcommand{\Kc}{$K_{\text{c}}$}
+  \newcommand{\pKa}{p$K_{\text{a}}$}
+  \newcommand{\pKb}{p$K_{\text{b}}$}
+  \newcommand{\dipole}{+\hspace*{-3mm}$\longrightarrow$}
+  \newcommand{\cmi}{cm$^{-1}$}
+  \newcommand{\cd}{$\cdot$}
+  \newcommand{\ub}[2]{$\underbrace{\text{#1}}_{\text{#2}}$} % usage: \ub{top}{bottom}
+  \newcommand{\us}[2]{$\underset{\text{#2}}{\text{#1}}$}    % usage: \us{top}{bottom}
+  \newcommand{\ffbox}[1]{\fbox{\fbox{\parbox{.95\textwidth}{\centering #1}}}}
+\else
+\fi
+
 
 % ==========================================================================================
 % ==========================================================================================
