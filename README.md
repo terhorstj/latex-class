@@ -130,7 +130,7 @@ This option loads the following:
 
 Example: ```\documentclass[10pt,tmx]{jpt}```
 
-This option uses Times Roman clone fonts from ```\newtxtext``` with math support from ```\newtxmath```. Here I also include some preferred options and supporting packages. Line spacing is slightly expanded, and matching upright Greek alphabets are included from the Artemisia family via ```textgreek```. The calligraphic E provided by the ```emf``` package is a little bit too tall for the Times fonts, so instead we use ```mathalpha``` which allows for scaling.
+This option uses Times Roman clone fonts from ```newtxtext``` with math support from ```newtxmath```. Here I also include some preferred options and supporting packages. Line spacing is slightly expanded, and matching upright Greek alphabets are included from the Artemisia family via ```textgreek```. (Note: ```newtxmath``` defines its own "upgreek"-style glyphs (```$\upalpha$```, ```$\upbeta$```, etc.) to match ```newtxtext```, so the practical use of ```textgreek``` is mostly for compatibility.) The calligraphic E provided by the ```emf``` package is a little bit too tall for the Times fonts, so instead we use ```mathalpha``` which allows for scaling.
 
 * ```\RequirePackage[T1]{fontenc}``` - modern T1 encoding
 * ```\RequirePackage[defaultsups,trueslanted]{newtxtext}```- Times font   
@@ -143,7 +143,7 @@ This option uses Times Roman clone fonts from ```\newtxtext``` with math support
 
 Example: ```\documentclass[10pt,palatino]{jpt}```
 
-This option uses Palatino clone fonts from ```\newpxtext``` with math support from ```\newpxmath```. Here I also include some preferred options and supporting packages. Linespacing is expanded slightly more than what is used for other fonts, and matching upright Greek alphabets are included from the Euler family via ```textgreek```. The matching calligraphic E provided by the ```emf``` package.
+This option uses Palatino clone fonts from ```\newpxtext``` with math support from ```\newpxmath```. Here I also include some preferred options and supporting packages. Linespacing is expanded slightly more than what is used for other fonts, and matching upright Greek alphabets are included from the Euler family via ```textgreek```. (Note: ```newpxmath``` defines its own "upgreek"-style glyphs (```$\upalpha$```, ```$\upbeta$```, etc.) to match ```newpxtext```, so the practical use of ```textgreek``` is mostly for compatibility.) The matching calligraphic E provided by the ```emf``` package.
 
 * ```\RequirePackage[T1]{fontenc}``` - modern T1 encoding
 * ```\RequirePackage[defaultsups]{newpxtext}``` - Palatino font
@@ -157,7 +157,7 @@ This option uses Palatino clone fonts from ```\newpxtext``` with math support fr
 
 Example: ```\documentclass[10pt,minion]{jpt}```
 
-This option uses Minion Pro font via the ```MinionPro``` package, which must be configured with the commercial fonts from Adobe; this setting will not work without a properly configured ```MinionPro``` package. Other supporting packages are included, including ```biolinum``` which provides a complementary sans serif font, enabling of upright Greek alphabets (matching characters are provided by the ```MinionPro``` package), adjustment of linespacing, and provision of a matching ```\emf``` character.
+This option uses Minion Pro font via the ```MinionPro``` package, which must be configured with the commercial fonts from Adobe; this setting will not work without a properly configured ```MinionPro``` package. Other supporting packages are included, including ```biolinum``` which provides a complementary sans serif font, ```textgreek``` enabling of upright Greek alphabets (matching characters are provided by the ```MinionPro``` package), adjustment of linespacing, and provision of a matching ```\emf``` character. (Note: ```MinionPro``` defines its own "upgreek"-style glyphs (```$\upalpha$```, ```$\upbeta$```, etc.), so the practical use of ```textgreek``` is mostly for compatibility.)
 
 * ```\RequirePackage[minionint,lf]{MinionPro}``` - Minion Pro
 * ```\RequirePackage{biolinum}``` - Biolinum
@@ -170,7 +170,7 @@ This option uses Minion Pro font via the ```MinionPro``` package, which must be 
 
 Example: ```\documentclass[10pt,charter]{jpt}```
 
-This option uses the open source Charter font, along with math support from ```newtxmath```. Other supporting packages are included to adjust linespacing, to provide matching upright Greek alphabets, and to provide a matching ```\emf``` character, scaled to match the Charter font.
+This option uses the open source Charter font, along with math support from ```newtxmath```. Other supporting packages are included to adjust linespacing, to provide matching upright Greek alphabets, and to provide a matching ```\emf``` character, scaled to match the Charter font. (Note: ```newtxmath``` defines its own "upgreek"-style glyphs (```$\upalpha$```, ```$\upbeta$```, etc.) to match ```XCharter```, so the practical use of ```textgreek``` is mostly for compatibility.)
 
 * ```\RequirePackage[T1]{fontenc}``` - modern T1 encoding
 * ```\RequirePackage{XCharter}``` - Charter
@@ -197,7 +197,7 @@ This option uses a New Century clone font with math support. Other supporting pa
 
 Example: ```\documentclass[10pt,ebg]{jpt}```
 
-This option uses the EB Garamond font with math support from ```newtxmath```. Other supporting packages are included to provide matching upright Greek alphabets, and to provide a matching ```\emf``` character, scaled to match the EB Garamond font.
+This option uses the EB Garamond font with math support from ```newtxmath```. Other supporting packages are included to provide matching upright Greek alphabets, and to provide a matching ```\emf``` character, scaled to match the EB Garamond font. (Note: ```newtxmath``` defines its own "upgreek"-style glyphs (```$\upalpha$```, ```$\upbeta$```, etc.) to match ```ebgaramond```, so the practical use of ```textgreek``` is mostly for compatibility.)
 
 * ```\RequirePackage[T1]{fontenc}``` - modern T1 encoding 
 * ```\RequirePackage[lf]{ebgaramond}``` - EB Garamond font 
@@ -208,7 +208,7 @@ This option uses the EB Garamond font with math support from ```newtxmath```. Ot
 
 ### BVX
 
-This option uses the Baskervaldx font (Baskerville clone) with math support from ```newtxmath```. Other supporting packages are included to provide matching upright Greek alphabets, and to provide a matching ```\emf``` character, scaled to match the Baskervaldx font.
+This option uses the Baskervaldx font (Baskerville clone) with math support from ```newtxmath```. Other supporting packages are included to provide matching upright Greek alphabets, and to provide a matching ```\emf``` character, scaled to match the Baskervaldx font. (Note: ```newtxmath``` defines its own "upgreek"-style glyphs (```$\upalpha$```, ```$\upbeta$```, etc.) to match ```Baskervaldx```, so the practical use of ```textgreek``` is mostly for compatibility.)
 
 * ```\RequirePackage[T1]{fontenc}``` - modern T1 encoding 
 * ```\RequirePackage{Baskervaldx}``` - Baskervaldx font
