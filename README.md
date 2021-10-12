@@ -50,7 +50,8 @@ Other global options that I have added are as follow, with a brief description f
 * ```tables``` - better tables via ```booktabs```
 * ```captions``` - better captions via ```caption```
 * ```fullpage``` - 1 inch margins via ```geometry```
-* ```narrow``` - wide left/right margins (narrow ```textwidth```) via ```geometry```
+* ```narrow``` - wide (1.8 inch) left/right margins (narrow ```textwidth```) via ```geometry```
+* ```tight``` - tight (0.5 inch) margins via ```geometry```
 * ```ars``` - restyle sections in an Ars Classica theme
 * ```blockpar``` - use block paragraphs via ```parskip```
 * ```footnotes``` - aesthetic adjustments to footnotes, including hanging text if ```blockpar``` is invoked
@@ -251,6 +252,12 @@ This option implements the ```geometry``` package and sets all margins to 1 inch
 Example: ```\documentclass[10pt,cm,narrow]{jpt}```
 
 This option implements the ```geometry``` package and sets top/bottom margins to 1 inch and left/right margins to 1.8 inch; this gives a "narrow" textwidth dimension for more ideal line widths. The ```geometry``` package algorithmically redefines headers, footers, and marginnote spacing based on margin availability.
+
+### Tight
+
+Example: ```\documentclass[10pt,cm,tight]{jpt}```
+
+This option implements the ```geometry``` package and sets all margins to 0.5 inches for more text per page. The ```geometry``` package algorithmically redefines headers, footers, and marginnote spacing based on margin availability.
 
 ### BlockPar
 
