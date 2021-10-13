@@ -40,7 +40,7 @@ Other global options that I have added are as follow, with a brief description f
 * ```lm```  - use Latin Modern font
 * ```mlm``` - use ```mlmodern``` font
 * ```tmx``` - use ```newtxtext``` and ```newtxmath``` fonts
-* ```palatino``` - use ```newpxtext``` and ```newpxmath``` fonts
+* ```npx``` - use ```newpxtext``` and ```newpxmath``` fonts
 * ```minion``` - use Minion Pro via the ```MinionPro``` package
 * ```charter``` - use ```XCharter``` with math support from ```newtxmath```
 * ```nc``` - use New Century with math support via ```fouriernc```
@@ -61,7 +61,7 @@ Other global options that I have added are as follow, with a brief description f
 
 ## Details for Global Options: Fonts
 
-For each font selection (```cm```, ```lm```, ```mlm```, ```tmx```, ```palatino```, ```minion```, ```charter```, ```nc```, ```egb```, and ```bvx```), other supporting packages are loaded for compatibility. **Only one font choice should be invoked. Invoking multiple font choices will result in option clashes.**
+For each font selection (```cm```, ```lm```, ```mlm```, ```tmx```, ```npx```, ```minion```, ```charter```, ```nc```, ```egb```, and ```bvx```), other supporting packages are loaded for compatibility. **Only one font choice should be invoked. Invoking multiple font choices will result in option clashes.**
 
 ### If no font selection is made...
 
@@ -139,9 +139,9 @@ This option uses Times Roman clone fonts from ```newtxtext``` with math support 
 * ```\RequirePackage[artemisia]{textgreek}``` - load matching upright Greek in text mode
 * ```\RequirePackage[cal=boondox,calscaled=1.0]{mathalpha}\newcommand{\emf}{\mathcal{E}}```	- load Boondox calligraphic E for ```\emf```
 
-### Palatino
+### NPX
 
-Example: ```\documentclass[10pt,palatino]{jpt}```
+Example: ```\documentclass[10pt,npx]{jpt}```
 
 This option uses Palatino clone fonts from ```\newpxtext``` with math support from ```\newpxmath```. Here I also include some preferred options and supporting packages. Linespacing is expanded slightly more than what is used for other fonts, and matching upright Greek alphabets are included from the Euler family via ```textgreek```. (Note: ```newpxmath``` defines its own "upgreek"-style glyphs (```$\upalpha$```, ```$\upbeta$```, etc.) to match ```newpxtext```, so the practical use of ```textgreek``` is mostly for compatibility.) The matching calligraphic E provided by the ```emf``` package.
 
@@ -283,11 +283,11 @@ This option works the same way as ```footnotes```, but uses lowercase Roman nume
 
 ### Ars
 
-Example: ```\documentclass[10pt,palatino,narrow,ars,footnotes,tables,captions]{jpt}```	
+Example: ```\documentclass[10pt,npx,narrow,ars,footnotes,tables,captions]{jpt}```	
 
 The ```ars``` option reproduces the Ars Classica document theme (see the ```ArsClassica``` package by Lorenzo Pantieri) by redefining section, abstract, and title headings. In doing so, two new commands are provided: ```\spacedlowsmallcaps{}``` and ```\spacedallcaps{}```. This option uses the sans serif font Iwona, which looks very nice in spaced all-caps. Letterspacing is achieved with the ```soul``` package.
 
-This option can be used in conjunction with any other global options; however the original Ars Classica document "look" can be best achieved by combining the options ```[10pt,palatino,narrow,ars,footnotes,tables,captions]```.
+This option can be used in conjunction with any other global options; however the original Ars Classica document "look" can be best achieved by combining the options ```[10pt,npx,narrow,ars,footnotes,tables,captions]```.
 
 ### Chem
 

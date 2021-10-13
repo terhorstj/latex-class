@@ -44,7 +44,7 @@
 \newif\if@lm\DeclareOption{lm}{\@lmtrue} 
 \newif\if@mlm\DeclareOption{mlm}{\@mlmtrue} 
 \newif\if@tmx\DeclareOption{tmx}{\@tmxtrue} 
-\newif\if@palatino\DeclareOption{palatino}{\@palatinotrue}
+\newif\if@npx\DeclareOption{npx}{\@npxtrue}
 \newif\if@minion\DeclareOption{minion}{\@miniontrue}
 \newif\if@mtpsymb\DeclareOption{mtpsymb}{\@mtpsymbtrue}
 \newif\if@charter\DeclareOption{charter}{\@chartertrue}
@@ -723,7 +723,7 @@
 \else %
 \fi
 
-\if@palatino
+\if@npx
   \RequirePackage[T1]{fontenc}
   \RequirePackage[defaultsups]{newpxtext}
   \RequirePackage[smallerops]{newpxmath}
