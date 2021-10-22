@@ -30,7 +30,6 @@ By invoking the class file, you will automatically load the following packages a
 
 * ```\RequirePackage{comment}``` - extremely useful package that I always load
 * ```\RequirePackage{microtype}``` - improved typography
-* ```\RequirePackage{enumitem}\setlist{noitemsep}``` - get rid of the weird spacing in default itemized/enumerated lists
 * ```\RequirePackage[version=4]{mhchem}``` - chemistry package that also loads relevant math packages 
 * ```\frenchspacing``` - word and sentence spacing more in line with modern usage and styles
 
@@ -57,7 +56,9 @@ Other global options that I have added are as follow, with a brief description f
 * ```footnotes``` - aesthetic adjustments to footnotes, including hanging text if ```blockpar``` is invoked
 * ```footnotesroman``` - the same as ```footnotes``` but using roman numbers, so as not to confuse footnotes with bibliography entries.
 * ```chem``` - chemistry macros
+* ```lists``` - get rid of the weird spacing in default itemized/enumerated lists
 * ```misc``` - extra useful packages
+
 
 ## Details for Global Options: Fonts
 
@@ -354,5 +355,12 @@ This option loads a variety of other packages that might be useful in your docum
 * ```\def\eighth{\nicefrac{1}{8}}```
 * ```\def\threeeighth{\nicefrac{3}{8}}```
 
+### Lists
+
+Example: ```\documentclass[10pt,cm,lists]{jpt}```
+
+Use this option to get rid of the weird spacing in default itemized/enumerated lists
+
+* ```\RequirePackage{enumitem}\setlist{noitemsep}``` 
 
 

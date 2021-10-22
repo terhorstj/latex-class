@@ -74,6 +74,7 @@
 % -- other packages
 \newif\if@misc\DeclareOption{misc}{\@misctrue}
 \newif\if@chem\DeclareOption{chem}{\@chemtrue}
+\newif\if@lists\DeclareOption{lists}{\@liststrue}
 
 % ==========================================================================================
 % ==========================================================================================
@@ -652,9 +653,9 @@
 % ==========================================================================================
 
 % packages
+
 \RequirePackage{comment}
 \RequirePackage{microtype}
-\RequirePackage{enumitem}\setlist{noitemsep}
 \RequirePackage[version=4]{mhchem}
 \frenchspacing
 \newcommand{\snd}[1]{\setcounter{secnumdepth}{#1}}
@@ -663,7 +664,14 @@
 % ==========================================================================================
 % ==========================================================================================
 
-% modules
+% lists
+
+\if@lists
+	\RequirePackage{enumitem}\setlist{noitemsep}
+\else
+\fi
+
+% font modules
 
 \if@cm
   \RequirePackage{setspace}\setstretch{1.1}
@@ -791,6 +799,8 @@
 \else
 \fi
 
+% formatting
+
 \if@ars
   \renewcommand{\sfdefault}{iwona}
   \RequirePackage{soul}
@@ -902,7 +912,7 @@
 \if@misc
   \RequirePackage{graphicx}
   \RequirePackage{float}
-  \RequirePackage{xcolor}
+  \RequirePackage[usenames,dvipsnames]{xcolor}
   \RequirePackage{siunitx}
   \RequirePackage[all]{nowidow}
   \RequirePackage{nicefrac}
